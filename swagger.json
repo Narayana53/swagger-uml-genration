@@ -1,0 +1,1446 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "QP QPF Service ",
+    "description": "Swagger for the project",
+    "version": "1.0.0"
+  },
+  "definitions": {},
+  "paths": {
+    "/aadhaar/v1/authentication/auth": {
+      "post": {
+        "summary": "This api creates an ",
+        "description": "<h3> This API let users  </h3>",
+        "tags": [
+          "AADHAAR"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "device_data": {
+                  "type": "string"
+                },
+                "skey": {
+                  "type": "string"
+                },
+                "hmac": {
+                  "type": "string"
+                },
+                "aadhaar_vvid": {
+                  "type": "string"
+                },
+                "rdsId": {
+                  "type": "string"
+                },
+                "rdsVer": {
+                  "type": "string"
+                },
+                "dpId": {
+                  "type": "string"
+                },
+                "dc": {
+                  "type": "string"
+                },
+                "mi": {
+                  "type": "string"
+                },
+                "mc": {
+                  "type": "string"
+                },
+                "ci": {
+                  "type": "string"
+                },
+                "auth_type": {
+                  "type": "string",
+                  "enum": [
+                    "BIOAUTH",
+                    "OTP"
+                  ]
+                }
+              },
+              "required": [
+                "aadhaar_vvid",
+                "skey",
+                "hmac"
+              ],
+              "additionalProperties": false
+            }
+          }
+        ],
+        "security": [
+          {
+            "ApiToken": []
+          },
+          {
+            "StaticToken": []
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "property": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aadhaar/v1/authentication/kyc": {
+      "post": {
+        "summary": "This api creates an ",
+        "description": "<h3> This API let users  </h3>",
+        "tags": [
+          "AADHAAR"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "device_data": {
+                  "type": "string"
+                },
+                "skey": {
+                  "type": "string"
+                },
+                "hmac": {
+                  "type": "string"
+                },
+                "module_id": {
+                  "type": "number"
+                },
+                "transaction_id": {
+                  "type": "number"
+                },
+                "aadhaar_vvid": {
+                  "type": "string"
+                },
+                "rdsId": {
+                  "type": "string"
+                },
+                "rdsVer": {
+                  "type": "string"
+                },
+                "dpId": {
+                  "type": "string"
+                },
+                "dc": {
+                  "type": "string"
+                },
+                "mi": {
+                  "type": "string"
+                },
+                "mc": {
+                  "type": "string"
+                },
+                "ci": {
+                  "type": "string"
+                },
+                "auth_type": {
+                  "type": "string",
+                  "enum": [
+                    "BIOKYC",
+                    "OTP"
+                  ]
+                }
+              },
+              "required": [
+                "aadhaar_vvid",
+                "skey",
+                "hmac"
+              ],
+              "additionalProperties": false
+            }
+          }
+        ],
+        "security": [
+          {
+            "ApiToken": []
+          },
+          {
+            "StaticToken": []
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "property": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aadhaar/v1/authentication/kyc/history": {
+      "post": {
+        "summary": "This api creates an ",
+        "description": "<h3> This API let users to get KYC history </h3>",
+        "tags": [
+          "AADHAAR"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "module_id": {
+                  "type": "number"
+                },
+                "transaction_id": {
+                  "type": "number"
+                },
+                "aadhaar_vvid": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "module_id",
+                "transaction_id",
+                "aadhaar_vvid"
+              ],
+              "additionalProperties": false
+            }
+          }
+        ],
+        "security": [
+          {
+            "ApiToken": []
+          },
+          {
+            "StaticToken": []
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "property": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aadhaar/v1/authentication/public/mobile/otp": {
+      "post": {
+        "summary": "This api send an Aadhaar mobile OTP",
+        "description": "<h3> This API will be used for mobile OTP   </h3>",
+        "tags": [
+          "AADHAAR"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "aadhaar_id": {
+                  "title": "",
+                  "type": "number"
+                },
+                "auth_type": {
+                  "title": "",
+                  "type": "string",
+                  "enum": [
+                    "MOBILEOTP",
+                    "OTP"
+                  ]
+                }
+              },
+              "required": [
+                "aadhaar_id"
+              ],
+              "additionalProperties": false
+            }
+          }
+        ],
+        "security": [
+          {
+            "StaticToken": []
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "property": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aadhaar/v1/authentication/public/mobile/auth": {
+      "post": {
+        "summary": "This api creates an Aadhar mobile authentication",
+        "description": "<h3> This API let users to send Aadhaar mobile OTP  </h3>",
+        "tags": [
+          "AADHAAR"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "aadhaar_id": {
+                  "title": "",
+                  "type": "number"
+                },
+                "otp": {
+                  "title": "",
+                  "type": "number"
+                },
+                "auth_type": {
+                  "title": "",
+                  "type": "string",
+                  "enum": [
+                    "MOBILEAUTH",
+                    "OTP"
+                  ]
+                }
+              },
+              "required": [
+                "aadhaar_id",
+                "otp"
+              ],
+              "additionalProperties": false
+            }
+          }
+        ],
+        "security": [
+          {
+            "StaticToken": []
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "property": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Default Response",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "error": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded",
+    "application/xml",
+    "text/xml"
+  ],
+  "produces": [
+    "application/json",
+    "application/javascript",
+    "application/xml",
+    "text/xml",
+    "text/javascript"
+  ],
+  "securityDefinitions": {
+    "ApiToken": {
+      "description": "Authorization header token, sample: \"Bearer #TOKEN#\"",
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    },
+    "StaticToken": {
+      "description": "Add the Static token : \"Static Token\"",
+      "type": "apiKey",
+      "name": "qp-tc-request-id",
+      "in": "header"
+    }
+  }
+}

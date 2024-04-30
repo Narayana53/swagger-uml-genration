@@ -1,0 +1,120 @@
+@startuml
+hide empty members
+set namespaceSeparator none
+
+interface "/aadhaar/v1/authentication/auth" {
+}
+
+class "POST /aadhaar/v1/authentication/auth" {
+.. body ..
+{field} object body
+.. responses ..
+400: {field} object 
+401: {field} object 
+404: {field} object 
+405: {field} object 
+415: {field} object 
+429: {field} object 
+500: {field} object 
+502: {field} object 
+}
+
+
+
+"/aadhaar/v1/authentication/auth" ..> "POST /aadhaar/v1/authentication/auth"
+
+
+
+interface "/aadhaar/v1/authentication/kyc" {
+}
+
+class "POST /aadhaar/v1/authentication/kyc" {
+.. body ..
+{field} object body
+.. responses ..
+400: {field} object 
+401: {field} object 
+404: {field} object 
+405: {field} object 
+415: {field} object 
+429: {field} object 
+500: {field} object 
+502: {field} object 
+}
+
+
+
+"/aadhaar/v1/authentication/kyc" ..> "POST /aadhaar/v1/authentication/kyc"
+
+
+
+interface "/aadhaar/v1/authentication/kyc/history" {
+}
+
+class "POST /aadhaar/v1/authentication/kyc/history" {
+.. body ..
+{field} object body
+.. responses ..
+400: {field} object 
+401: {field} object 
+404: {field} object 
+405: {field} object 
+415: {field} object 
+429: {field} object 
+500: {field} object 
+502: {field} object 
+}
+
+
+
+"/aadhaar/v1/authentication/kyc/history" ..> "POST /aadhaar/v1/authentication/kyc/history"
+
+
+
+interface "/aadhaar/v1/authentication/public/mobile/otp" {
+}
+
+class "POST /aadhaar/v1/authentication/public/mobile/otp" {
+.. body ..
+{field} object body
+.. responses ..
+400: {field} object 
+401: {field} object 
+404: {field} object 
+405: {field} object 
+415: {field} object 
+429: {field} object 
+500: {field} object 
+502: {field} object 
+}
+
+
+
+"/aadhaar/v1/authentication/public/mobile/otp" ..> "POST /aadhaar/v1/authentication/public/mobile/otp"
+
+
+
+interface "/aadhaar/v1/authentication/public/mobile/auth" {
+}
+
+class "POST /aadhaar/v1/authentication/public/mobile/auth" {
+.. body ..
+{field} object body
+.. responses ..
+400: {field} object 
+401: {field} object 
+404: {field} object 
+405: {field} object 
+415: {field} object 
+429: {field} object 
+500: {field} object 
+502: {field} object 
+}
+
+
+
+"/aadhaar/v1/authentication/public/mobile/auth" ..> "POST /aadhaar/v1/authentication/public/mobile/auth"
+
+
+
+@enduml
