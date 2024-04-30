@@ -1,7 +1,7 @@
-# swagger-uml-genratiob
+# swagger-uml-genration
 Generate UML diagrame form Swagger file
 
-Installation
+**Installation**
 
 The script runs with Python 3 without any additional packages. Transforming PUML into vector graphics or other requires external tools however.
 
